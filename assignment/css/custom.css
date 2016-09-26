@@ -1,0 +1,26 @@
+ /* 
+  Author: Feilim Lawless
+  Assignment: WE41 Mobile Web Applications, DSA, Mobile jQuery 
+  Date: 15/08/2016
+*/
+
+/* ensure all of image is visible on screen*/
+img { max-width: 100%; height: auto; }
+
+/* create class to customise panel colours */
+.custom-panel {
+	background-color: #BA9CA6;
+	color: #171113;
+
+}
+/* create class to centre header and button on side panel*/
+.center-wrapper {
+  text-align: center;
+}
+
+ /* create class to customise panel button colours using "!important" to take precedence over default button css */
+.panel_button {
+	background-color: #d2a7a7 !important;
+	color: #4d0000 !important;	
+
+}

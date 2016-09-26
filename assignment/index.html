@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  Author: Feilim Lawless
+  Assignment: WE41 Mobile Web Applications, DSA, Mobile jQuery 
+  Date: 15/08/2016
+  -->
+<head>
+  <title>WE41_A_MWA jQuery Mobile List App Assignment</title>
+
+  <!-- tells browser how to control the page's dimensions and scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--include the various locally held css files required for page styling --> 
+  <link rel="stylesheet" href="css/themes/purple_base.min.css" />
+  <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+  <link rel="stylesheet" href="css/custom.css" /><!--include custom file last so that it's higher in the hierarchy --> 
+  <!--include the locally held jquery library files used for DOM traversal and manipulation, and event handling -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.js"></script>
+  <script type="text/javascript">
+
+  // load a json file using jQuery ajax technique
+  // note: 'ajax' was chosen over the shorthand 'getJSON' due to the brief saying "approach should be modular enough that replacing JSON with any similarly formed data will still allow the code to function". The getJSON method is used only for json data.
+  $(document).ready(function(){
+    $.ajax({
+      type: "GET",
+      // url currently points to a client side json file but if the app were using live data, it would point to a http url in order to access server-side dynamic data. This dynamic data would effect the content and length of the html strings appended to the DOM by the function parseAppendToDOM()
+      url: "films.json",
+      dataType: "json",
+      cache: false,
+      success: insertToDOM
+    });
+  });
+
+
+  // function loops through the array 'films' contained in 'films.json' and combines the parsed values for each array item with 
+  // static html mark-up to build up 2 html string variables. After end of loop sequence, the two strings are appended to the DOM.
+  // In a live data scenario, variations in the content and length of the json file recieved will affect the 2 html strings to the same accord
+  function insertToDOM(data) {
+  
+    // declare and initialise variable which holds the html for the film list items which link to each review page
+    var str_html_list = ''; 
+    // declare and initialise variable which holds the html for each review page
+    var str_html_reviews = ''; 
+  
+
+    $(data.films).each(function (i, value) {
+        //build up list string
+        var a_list_item = '<li><a href="#' + value.id + '" data-transition="flip">' + value.name + '</a></li>';
+        //build up string of review pages
+        //note: 'src' attribute in <img> element points to locally held images for the purposes of this assignment
+        var a_review  = '<div data-role="page" id="' + value.id + '"> \
+                          <div data-role="header" data-position="fixed"> \
+                            <h1>Film List App</h1> \
+                            <a href="#film_list_page" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-left" data-transition="flip" data-direction="reverse">back</a> \
+                          </div> \
+                          <img src="img/'+value.src+'"> \
+                          <h3>' + value.name + '</h3> \
+                          <h4>Description:</h4> \
+                          <p>' + value.description + '</p> \
+                          <p>Rating: ' + value.rating + '</p> \
+                          <a href="#film_list_page" data-role="button" data-transition="flip" data-direction="reverse" data-icon="back">search again</a> \
+                      </div>';
+                        
+        str_html_list += a_list_item;
+        str_html_reviews += a_review;
+
+       });
+   
+    // append html strings to the DOM   
+    // .listview("refresh") method chained on to avoid added list items appearring without css stylings
+    $("#film_list").append(str_html_list).listview("refresh");
+    $("#movies").append(str_html_reviews);
+     
+  }
+  
+  </script>
+  <script type="text/javascript">
+    //applies the panel widget to the element with id="info_panel" 
+    $( function() {
+      $( "#info_panel" ).panel();
+    } );
+  </script>
+</head>
+
+<body>
+
+<div data-role="content">
+  <div class="content-primary" id="movies">
+    <!-- sets up homepage of app -->
+    <div data-role="page" id="film_list_page">
+      <div data-role="header" data-id="main-header" data-position="fixed">
+        <h1>Film List App</h1>
+        <a href="#info_panel" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right">Info</a>
+      </div>
+      <!-- sets up filterable search box -->
+      <div data-demo-html="true">
+        <form class="ui-filterable">
+          <input id="filterBasic-input" data-type="search">
+        </form>
+        <ul id="film_list" data-role="listview" data-filter="true" data-input="#filterBasic-input">
+          
+              <!-- this list will be added to the DOM after the json file is recieved and its elements are wrapped in html--> 
+        </ul>
+      </div>
+      <!-- sets up the side panel -->
+      <div id="info_panel" class="panel custom-panel" data-display="overlay" data-theme="none" data-position="left" data-position-fixed="true">
+        <div class="center-wrapper">
+          <h3>Instructions</h3>
+        </div>
+        <ul>
+          <li>Click a film title on the list to open a review page</li>
+          <li>Alternatively, type a film title into the search box to automatically filter the film list. </li>
+          <li>If no results are shown, check the spelling. If the search still comes back empty, this means the film has not been reviewed yet.</li>
+
+        </ul>
+        <div class="center-wrapper">
+          <a href="#film_list_page" data-rel="close" class="panel_button ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left ui-btn-inline " >Close panel</a>
+        </div>
+      </div><!-- /panel -->
+    </div>
+
+
+     <!-- the review-pages html string will be added here to the DOM after the json file is recieved and its elements are wrapped in html-->
+    
+
+  </div>
+
+</div>
+</body>

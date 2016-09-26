@@ -1,0 +1,21 @@
+{
+    "firstName": "Han",
+    "lastName": "Solo",
+    "details": {
+        "Sidekick": "Chewie",
+        "When": "A long time ago",
+        "Galaxy": "Far far away",
+        "bounty": 1000000
+    },
+    "phoneNumbers": [
+        {
+            "type": "home",
+            "number": "123-456"
+        },
+        {
+            "type": "fax",
+            "number": "789-101112"
+        }
+    ]
+}
+

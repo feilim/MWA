@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery mobile side panel</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+$( function() {
+  $( "#myPanel" ).panel();
+} );
+</script>
+
+
+
+</head>
+<body>
+    <div data-role="page" id="myPage">
+      <div data-role="header" class="header" id="myHeader">
+         <a href="#myPanel" class="ui-btn ui-icon-bars ui-btn-icon-left">Panel</a>
+         <h1>Header Title</h1>
+      </div>
+      <p>Hello this is a page!</p>
+      
+    <div class"panel"  data-position="right" data-display="push" id="myPanel">
+        <p>this is the panel</p>
+        <a href="#myHeader" data-rel="close" class="ui-btn ui-icon-delete ui-btn-icon-left">Close</a>
+      </div> 
+    </div>
+
+   
+</body>
+</html>

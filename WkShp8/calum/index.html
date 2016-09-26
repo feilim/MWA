@@ -1,0 +1,160 @@
+<!doctype html>
+<!--
+* Author: Callum McLeman
+* Assignment: WE4.1_A_MWA Module Mobile Web Applications, Digital Skills Academy
+* Date : 2016/09/10
+* Refs: (DSA course units) and...
+http://docs.phonegap.com/phonegap-build/
+https://developer.android.com/index.html
+https://cordova.apache.org/docs/en/5.1.1/guide/platforms/android/
+http://coenraets.org/blog/phonegap-tutorial/
+And too many to mention searches for emulators and AVD's , SDK's etc...
+
+angular: https://docs.angularjs.org/api ( start/entry point)
+Usual suspects: http://www.w3schools.com  for CSS, JavaScript & misc.
+
+
+-->
+<html >
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+ 	<title>Assignment 4 - Angular ToDo App</title>
+	<!--<link rel="stylesheet" href="css/assig4-theme.min.css" />-->
+	<link rel="stylesheet" href="css/my-custom-theme.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+ 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+ 	<link rel="stylesheet" type="text/css" href="css/assig4.css">
+ 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  
+</head>
+<!-- Wake up Angujar js to act -->
+<body ng-app="myModule" >
+	<!-- assign a controller, can be nested --> 
+	<div class="container" ng-controller="myController">
+	<!-- kick off the SPAs' main page -->
+		<div id="page1" data-role="page" data-theme="a">
+		<!-- cooked my own header this time-->
+			<div class="head-div">
+				<!-- top left corner 'info' button, lil Jack Horner..lol  -->	
+				<div class="lil-jacko">
+						
+  					<a href="#myPanel" class="ui-btn ui-corner-all" data-toggle="tooltip" title="Information Side Panel">
+                       <span> <img class="img-responsive" src="fonts/glyphicons-195-question-sign.png" /> </span> </a>
+    			</div>
+    			<div class="forget-me-not">
+					<img  class="img-responsive" src="img/notfrget.png" />
+				</div>
+				<h2 >To-Do</h2>
+				
+					
+				
+			</div>
+			<!-- header stuff end -->		
+			
+    		<div id="myView" data-role="content">
+
+    			<!-- div for modal cancel or delete popup -->
+        		<div id="modal-bkground"></div>
+
+        		<div id="modal-body">
+            
+            		<br><button id="delete" class="btn btn-primary btn-sm" role="button">Delete ?</button>
+            		<button id="cancel" class="btn btn-primary btn-sm" role="button">Cancel</button>
+        		</div>
+        		
+
+	 			<!--- the list display. (Apart from the js file where the Module & Ctrler are 
+	 			instanciated its the only place Angular is used  -->
+
+				<ul class="list-style">
+					<li id="ng-list" data-ng-repeat="currentItem in toDoList | filter:descrip"><a class="a-item-style" data-toggle="tooltip" title="Click To Edit or Delete" href="#" data-ng-click="setTheStage($index)"> <i>{{$index+1}}.</i> {{' '}} {{currentItem.descrip}}</a></li>
+				</ul>
+
+				<div class="input-to-do">
+				<!-- found a cool code snippet  ( see refs) -->
+	      			Description: <textarea id="toDoTextArea" rows="2" data-ng-model="toDoText"> </textarea>
+	      			<!-- {{toDoText}} -->
+ 									
+
+				</div>
+				
+    		</div>
+
+    		<!-- data role content end -->
+
+    		<!-- button actions on the to do items -->
+			<div class="buttons-three" >
+			<!-- little trick to align 3 divs, float right, then the left and then the
+				center one! -->
+				
+				 <div class="btnz1">
+					<span>Add</span>
+					<a href="#" class="ui-alt-icon" data-role="button" data-icon="plus" data-iconpos="bottom" data-toggle="tooltip" title="Add Item" data-ng-click="addItem()"></a>
+				</div>
+				<!-- floats left -->
+									
+				<div class="btnz3">
+					<span>Delete</span>
+					<a href="#" class="ui-alt-icon" data-role="button" data-icon="delete" data-iconpos="bottom" data-toggle="tooltip" title="Delete Item" data-ng-click="deleteOrCancel()"></a>
+				</div>
+
+										
+				<div class="btnz2">
+					<span>Edit</span>
+					<a href="#" class="ui-alt-icon" data-role="button" data-icon="gear" data-iconpos="bottom" data-toggle="tooltip" title="Edit Item" data-ng-click="editItem()" ></a>
+				</div>
+			
+			</div> 
+			<!-- end action button box/div -->
+
+    		<!-- info side panel -->
+			<div id="myPanel" class="panel left" data-role="panel" data-display="overlay"  data-position="left" data-dismissible="true">
+				<!-- instruction manual -->
+
+
+				<div class="glyph-group">
+					<h3 class="g-g-title">Usage</h3>
+					<div class="glyph-div">
+						Tap <span ><img src="fonts/glyphicons-433-plus.png" /> </span> 
+						to add a new To Do Item to the list.
+					</div>
+				
+									
+					<div class="glyph-div">
+						Tap a list item followed by 
+						<span ><img src="fonts/glyphicons-137-cogwheel.png" /> </span>  </span> 
+						to Edit an existing Item on the list.
+					</div>
+
+				
+					<div class="glyph-div">
+						Tap a list item followed by 
+						<span > <img src="fonts/glyphicons-208-remove.png" /> </span> 
+						to Delete an item from the list.
+					</div>
+				</div>
+				<a href="#page1" data-rel="close" class="ui-btn ui-corner-all">Close</a>
+			</div>
+            <!--end panel div -->
+        </div>
+		<!--end spa / page1  end -->
+	</div> 
+	<!--end  controller -->
+    
+  	<script src="js/angular.min.js"></script>
+  	<!-- this next one tells phonegap to to inject a platform specific version of phonegap.js at build time ( see refs above)  -->
+  	<script src="phonegap.js"></script>
+  	<!-- the usual suspects..  -->
+  	<script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+  	<script src="js/controltest.js"></script>
+</body>
+</html>
+
+
+
+
+

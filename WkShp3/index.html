@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Workshop 2 Local Lists </title>
+
+ 
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+<link rel="stylesheet" href="css/themes/myfirsttheme.min.css" />
+<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript">
+//is this working at all?
+console.log("starting..")
+
+//standard jQuery ajax technique to load an xml file
+var xml;
+$(document).ready(function(){
+  $.ajax({
+    type: "GET",
+    url: "lolcatz.xml",
+    dataType: "xml",
+    success: xmlParser
+  });
+});
+
+//loading XML file and parsing..
+//this function is the line specified in line 26 above
+
+function xmlParser(data) {
+  xml = data;
+
+  $(xml).find("kitteh").each(function () {
+      kitteh = $(this);
+      var id = $(kitteh).find("id").text();
+      var name = $(kitteh).find("name").text();
+      var src = $(kitteh).find("url").text();
+
+      //console.log(name);
+
+      //dynamically writing to DOM using jQuery
+      $("#cats").append('<div data-role="page" id="' + id + '"><img src="'+src+'"><p>' + name + '</p><a href="#namelist" data-transition="slideup">search again</a></div>');
+      $("#myList").append('<li><a href="#' + id + '" data-transition="pop">' + name + '</a></li>');
+      });
+
+      //to avoid list items appearring without css stylings
+      //ref: bottom of http://demos.jquerymobile.com/1.0/docs/lists/docs-lists.html
+      $("#myList").listview("refresh");
+  }
+  
+</script>
+</head>
+
+<body>
+
+<div data-role="content">
+  <div class="content-primary" id="cats">
+    <div data-role="page" id="namelist">
+      <div data-demo-html="true">
+        <ul id="myList" data-role="listview" data-filter="true" data-filter-reveal="true">
+          
+               
+        </ul>
+      </div>
+    </div>
+
+
+     
+    
+
+  </div>
+
+</div>
+
+</body>

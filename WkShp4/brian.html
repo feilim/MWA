@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON Flickr</title>
+  
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+
+<script>
+
+( function() {
+  // wait for doc to be fully loaded
+$(document).ready( function(){
+  
+
+  // when the user submit button is clicked  
+  $('#userSubmitButton').click( function(){
+            
+    $('#images').empty();
+    
+    // assign the user submitted value to a variable 
+    var getUserInput = $('#userInput').val();
+    
+    // set variable for path to images source
+    var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+      
+
+          // jQuery .getJSON
+          $.getJSON( flickerAPI, {
+                          
+                          tags: getUserInput,
+                          tagmode: "any",
+                          format: "json",
+                          
+                         })     
+                      
+                      .done(function( data ) {
+                           
+                            console.log(data.link);
+                           
+                            $.each( data.items, function( i, item ) {
+                                     
+                             
+    // grab the thePopups tab, add link tab before it. 
+    $("#thePopups").before('<a href="#photo'+i+'" data-rel="popup">Photo'+i+'</a></br>');
+
+    // make next image id
+      var nextImg = 'img'+i;
+    
+    // add an img tag to the thePopups tag. 
+    $("#thePopups").append("<img id="+nextImg+" />");
+    
+    // add a hash to us when looking for the image tags
+    var addHash = "#"+nextImg;
+    
+    // wrap the img tag in a data-role div
+    $(addHash).wrap('<div data-role="popup" id="photo'+i+'"></div>');
+
+    // add and imge src and link to the img tag
+    $(addHash).attr("src", item.media.m );
+
+
+    // IF YOU LOOK IN THE BROWSER INSPECTOR YOU WILL SEE THE HTML IS IN PLACE
+    // BUT THE CODE IS NOT WORKING AND FOR THE LOVE OF GOD I DON'T KNOW WHY.
+    
+    
+
+                             //alert(data.items.length)
+                                    
+                                if ( i === 5 ) {
+                                    return false;
+                                }
+
+
+
+                            
+                          });
+                      });                        
+          });
+});
+})(jQuery);
+
+</script>
+
+</head>
+<body>
+ 
+
+<!-- This is the div for the images  -->      
+          
+          <div id="thePopups">
+                  
+          </div>
+          
+
+          <input type="textbox" id="userInput" placeholder="Enter Something" />
+          <input type="submit" id="userSubmitButton" value="send" />
+ 
+</body>
+</html>

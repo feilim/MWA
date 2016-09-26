@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- /**********************************************************-->
+<!-- * Author: colum.jones@webelevate.ie-->
+<!-- * Assignment: WE4.1 Mobile Angular App Assignment, Digital Skills Academy DT7003-->
+<!-- * Student ID: D15128630-->
+<!-- * Date : 10/Sept/2016-->
+<!-- * Ref: website link to code referenced or the book, authors name and page number-->
+<!-- * angulat code from https://github.com/curran/screencasts/introToAngular/examples/snapshots/snapshot17/index.html  -->
+<!-- ***********************************************************/-->
+
+<html lang="en">
+<html ng-app="nameApp">
+  <head>
+    <meta charset="utf-8">
+    <title>MWA Assesment 2 Angular SPA Mobile App</title>
+    <meta name="author" content="Colum Jones">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+  	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+  	<link rel="stylesheet" href="css/themes/Formula1Theme.css" />
+  	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  	<script src="js/jquery.mobile-1.4.5.js"></script>
+  </head>
+
+  <body ng-controller="NameCtrl">
+  	<div data-role="page" id="index" data-theme="a">
+	<div data-role="header" data-theme="a">
+  		<h1> List App </h1>
+  	</div> <!--end of index page header -->
+
+  	<!--start of index page content -->
+  	<div role="main" class="ui-content" data-theme="a">
+    	<ul> <!-- displaying the todo list -->
+      		<li ng-repeat="name in names">{{name}}
+        	<a href="" ng-click="removeName(name)">remove</a>
+      		</li>
+    	</ul>
+
+    	<form ng-submit="addName()"> <!-- input box and button -->
+      		<input type="text" ng-model="enteredName" placeholder="add text here" style="color:black">
+      		<input type="submit" value="add">
+    	</form>
+    <hr>
+    	<h3> This is a list application using Angular and Phonegap.</h3>
+    	<p> </p>
+    </div> <!--end of index page content -->
+
+    <div data-role="footer">
+    	<h3>2016 WE4.1 MWA Assesment 2,<br> Colum Jones .</h3>
+    </div> <!--end of index page footer -->
+
+	</div> <!--end of page -->
+</body>
+
+<script src="js/angular.js"></script>
+<script src="js/todo.js"></script>
+</html>

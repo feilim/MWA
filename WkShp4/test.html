@@ -1,0 +1,50 @@
+<html lang="en" class="ui-mobile"><head><base href="http://localhost/mwa/wkshp4/ex2b.html">
+  <meta charset="utf-8">
+  <title>jQuery.getJSON Flickr</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css">
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+
+
+
+<script>
+
+$(document).ready( function(){
+  function myFunction() {
+    var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    $.getJSON( flickerAPI, {
+      tags: $("#txt_name").val(),
+      tagmode: "any",
+      format: "json",
+    })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $("#links").append( "<a href='#photo" + i + "' data-rel='popup'>Open Popup" + i + "</a><br>");
+        
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#thePopups" )
+        .wrap("<div data-role='popup' id='photo" + i + "'></div>");
+
+        if ( i === 3 ) {
+          return false;
+        }
+      });
+    });
+  };
+  
+  $("#myButton").on('click', myFunction);
+  
+});
+
+</script>
+</head>
+<body class="ui-mobile-viewport ui-overlay-c">
+<div data-role="page" id="home" data-url="home" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 585px;">
+<input id="txt_name" type="text" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+<div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="null" data-iconpos="null" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c" aria-disabled="false"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Click Me!</span></span><button type="button" id="myButton" class="ui-btn-hidden" aria-disabled="false">Click Me!</button></div>
+<div id="links"><a href="#photo0" data-rel="popup">Open Popup0</a><br><a href="#photo1" data-rel="popup">Open Popup1</a><br><a href="#photo2" data-rel="popup">Open Popup2</a><br><a href="#photo3" data-rel="popup">Open Popup3</a><br></div>
+<div id="thePopups"><div data-role="popup" id="photo0"><img src="http://farm9.staticflickr.com/8809/28348547290_97307a4316_m.jpg"></div><div data-role="popup" id="photo1"><img src="http://farm9.staticflickr.com/8732/28599771896_18674ba63e_m.jpg"></div><div data-role="popup" id="photo2"><img src="http://farm9.staticflickr.com/8733/28599221936_a5707784a9_m.jpg"></div><div data-role="popup" id="photo3"><img src="http://farm8.staticflickr.com/7777/28552937871_535a1805f1_m.jpg"></div></div>
+</div>
+
+
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span><h1>loading</h1></div></body></html>

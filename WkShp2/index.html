@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Workshop 2 Local Lists </title>
+
+ 
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+<link rel="stylesheet" href="css/themes/myfirsttheme.min.css" />
+<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+   <script src="js/jquery-1.11.1.min.js"></script>
+   <script src="js/jquery.mobile-1.4.5.js"></script>
+
+</head>
+
+<body>
+<div data-role="content">
+  <div class="content-primary">
+    <div data-role="page" id="namelist">
+      <div data-demo-html="true">
+        <ul data-role="listview" data-filter="true" data-filter-reveal="true">
+          <li><a href="#luke" data-transition="pop">Luke</a></li>
+          <li><a href="#leia" data-transition="pop">Leia</a></li>
+          <li><a href="#han" data-transition="pop">Han</a></li>    
+          <li><a href="#chewie" data-transition="pop">Chewie</a></li>     
+        </ul>
+      </div>
+    </div>
+    <div data-role="page" id="luke">
+      <p>I'm here to rescue you</p>
+      <p><a href="#namelist" data-transition="slideup">search again</a></p>
+    </div>
+    <div data-role="page" id="leia">
+      <p>Aren't you a little short for a stormtrooper?</p>
+      <p><a href="#namelist" data-transition="slideup">search again</a></p>
+    </div>
+    <div data-role="page" id="han">
+      <p>Never tell me the odds</p>
+      <p><a href="#namelist" data-transition="slideup">search again</a></p>
+    </div>
+    <div data-role="page" id="chewie">
+      <p>Mwahh huahahuhuah</p>
+      <p><a href="#namelist" data-transition="slideup">search again</a></p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON Flickr</title>
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+</head>
+<body>
+<input id="txt_name" type="text" value="" />
+<button type="button" id="myButton">Click Me!</button>
+<div id="images"></div>
+<script>
+  function myFunction() {
+    var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    $.getJSON( flickerAPI, {
+      tags: $("#txt_name").val(),
+      tagmode: "any",
+      format: "json",
+    })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        if ( i === 3 ) {
+          return false;
+        }
+      });
+    });
+  };
+  
+  $("#myButton").on('click', myFunction);
+</script>
+</body>
+</html>

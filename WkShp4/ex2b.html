@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON Flickr</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+
+
+
+<script>
+
+$(document).ready( function(){
+  function myFunction() {
+    var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    $.getJSON( flickerAPI, {
+      tags: $("#txt_name").val(),
+      tagmode: "any",
+      format: "json",
+    })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $("#links").append( "<a href='#photo" + i + "' data-rel='popup'>Open Popup" + i + "</a><br>");
+        
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#thePopups" )
+        .wrap("<div data-role='popup' id='photo" + i + "'></div>");
+
+        if ( i === 3 ) {
+          //ensure dynamically created html has css stylings applied to it before exiting
+          $("#results").trigger("create");
+          return false;
+        }
+      });
+    });
+    
+  };
+  
+  $("#myButton").on('click', myFunction);
+  
+});
+
+</script>
+</head>
+<body>
+<div data-role="content">
+  <div class="content-primary" id="cats">
+    <div data-role="page" id="namelist">
+      <div data-demo-html="true">
+
+        
+    <input id="txt_name" type="text" value="" />
+    <button type="button" id="myButton">Click Me!</button>
+  </div>  
+<div id="results">
+<div id="links"></div>
+<div id="thePopups"></div>
+</div>
+
+
+</body>
+</html>

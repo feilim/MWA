@@ -1,0 +1,146 @@
+ {
+ "films": [
+      {
+        "id": "1",
+        "name": "Casablanca (1942)",
+        "description": "In World War II Casablanca, Rick Blaine, exiled American and former freedom fighter, runs the most popular nightspot in town. The cynical lone wolf Blaine comes into the possession of two valuable letters of transit. When Nazi Major Strasser arrives in Casablanca, the sycophantic police Captain Renault does what he can to please him, including detaining a Czechoslovak underground leader Victor Laszlo. Much to Rick's surprise, Lazslo arrives with Ilsa, Rick's one time love. Rick is very bitter towards Ilsa, who ran out on him in Paris, but when he learns she had good reason to, they plan to run off together again using the letters of transit. Well, that was their original plan....",
+        "rating": "9/10",
+        "src": "casablanca.jpg"
+      },
+      {
+        "id": "2",
+        "name": "Mad Max - Fury Road (2015)",
+        "description":"An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity is broken, and almost everyone is crazed fighting for the necessities of life. Within this world exist two rebels on the run who just might be able to restore order. There's Max, a man of action and a man of few words, who seeks peace of mind following the loss of his wife and child in the aftermath of the chaos. And Furiosa, a woman of action and a woman who believes her path to survival may be achieved if she can make it across the desert back to her childhood homeland.",
+        "rating": "9/10",
+        "src": "mad-max.jpg"
+      },
+      {
+        "id": "3",
+        "name": "Suicide Squad (2016) ",
+        "description": "It feels good to be bad...Assemble a team of the world's most dangerous, incarcerated Super Villains, provide them with the most powerful arsenal at the government's disposal, and send them off on a mission to defeat an enigmatic, insuperable entity. U.S. intelligence officer Amanda Waller has determined only a secretly convened group of disparate, despicable individuals with next to nothing to lose will do. However, once they realize they weren't picked to succeed but chosen for their patent culpability when they inevitably fail, will the Suicide Squad resolve to die trying, or decide it's every man for himself?",
+        "rating": "7.1/10",
+        "src": "suicide_squad.jpg"
+      },
+      {
+        "id": "4",
+        "name": "Masterminds (2016)",
+        "description": "David Ghantt discovers the true meaning of adventure far beyond his wildest dreams. He is an uncomplicated man stuck in a monotonous life. Day in and day out he drives an armored vehicle, transporting millions of other people's money with no escape in sight. The only glimmer of excitement is his flirtatious work crush Kelly Campbell who soon lures him into the scheme of a lifetime. Along with a group of half-brained criminals led by Steve Chambers and an absurdly faulted heist plan, David manages the impossible and makes off with $17 million in cash...only problem is he foolishly hands the money over to this wild group of double crossers and has been set up to take the fall. With the bandits blowing the millions on lavish and ridiculous luxuries, they leave behind a glaring trail of evidence. Now on the lam and in over his head, David must dodge the authorities, evade a hilarious hit man, Mike McKinney, and try to turn the tables on the ones he trusted most.",
+        "rating": "6.9/10",
+        "src": "masterminds.jpg"
+      },
+      {
+        "id": "5",
+        "name": "Finding Dory (2016)",
+        "description": "Dory is a wide-eyed, blue tang fish who suffers from memory loss every 10 seconds or so. The one thing she can remember is that she somehow became separated from her parents as a child. With help from her friends Nemo and Marlin, Dory embarks on an epic adventure to find them. Her journey brings her to the Marine Life Institute, a conservatory that houses diverse ocean species. Dory now knows that her family reunion will only happen if she can save mom and dad from captivity.",
+        "rating": "8/10",
+        "src": "finding_dory.jpg"
+      },
+      {
+        "id": "6",
+        "name": "Zootopia (2016)",
+        "description": "From the largest elephant to the smallest shrew, the city of Zootopia is a mammal metropolis where various animals live and thrive. When Judy Hopps becomes the first rabbit to join the police force, she quickly learns how tough it is to enforce the law. Determined to prove herself, Judy jumps at the opportunity to solve a mysterious case. Unfortunately, that means working with Nick Wilde, a wily fox who makes her job even harder.",
+        "rating": "5.9/10",
+        "src": "zootopia.jpg"
+      },
+      {
+        "id": "7",
+        "name": "Nine Lives (2016)",
+        "description": "Tom Brand (Kevin Spacey) is a daredevil billionaire at the top of his game. His eponymous company FireBrand is nearing completion on its greatest achievement to date - the tallest skyscraper in the northern hemisphere. But Tom's workaholic lifestyle has disconnected him from his family, particularly his beautiful wife Lara (Jennifer Garner) and his adoring daughter Rebecca (Malina Weissman). Rebecca's 11th birthday is here, and she wants the gift she wants every year, a cat. Tom hates cats, but he is without a gift and time is running out. His GPS directs him to a mystical pet store brimming with odd and exotic cats- where the store's eccentric owner- Felix Perkins (Christopher Walken), presents him with a majestic tomcat, named Mr. Fuzzypants. En route to present his daughter with her dream pet, a bizarre turn of events finds Tom trapped inside the body of Mr. Fuzzypants. Adopted by his own family, he begins to experience what life is truly like for the family pet, and as a cat,",
+        "rating": "7.8/10",
+        "src": "nine_lives.jpg"
+      },
+      {
+        "id": "8",
+        "name": "American History X (1998)",
+        "description": "Derek Vineyard is paroled after serving 3 years in prison for killing two thugs who tried to break into/steal his truck. Through his brother, Danny Vineyard's narration, we learn that before going to prison, Derek was a skinhead and the leader of a violent white supremacist gang that committed acts of racial crime throughout L.A. and his actions greatly influenced Danny. Reformed and fresh out of prison, Derek severs contact with the gang and becomes determined to keep Danny from going down the same violent path as he did.",
+        "rating": "7.6/10",
+        "src": "american.jpg"
+      },
+      {
+        "id": "9",
+        "name": "Deadpool (2016)",
+        "description": "This is the origin story of former Special Forces operative turned mercenary Wade Wilson, who after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life.",
+        "rating": "8.5/10",
+        "src": "deadpool.jpg"
+      },
+      {
+        "id": "10",
+        "name": "The Huntsman: Winter's War (2016)",
+        "description": "The evil Ravenna finds that her sister Freya is pregnant and in love with a noble. Freya gives birth to a baby girl but her beloved lover murders the baby and her rage unleashes ice powers and she kills him. Freya heads to North and builds a palace and an army that captures children from the villages to be raised as soldiers without love. Years later, their children Eric and Sara are grown-up and in love with each other. They plan to flee from the castle, but Freya finds and builds an ice wall between them. Eric sees Sara being murdered stabbed on her back by their friend Tull and he is dumped in a frozen river but he survives. Eric, a.k.a. The huntsman grieves the death of his beloved Sara on a daily basis. One day, Snow White is ill and her husband seeks out Eric to tell that the Magic Mirror was taken while carried to a place called Sanctuary. Eric teams-up with two dwarfs to find the mirror, but they are attacked by Freya army and saved by Sara that is alive.",
+        "rating": "4.5/10",
+        "src": "huntsman.jpg"
+      },
+      {
+        "id": "11",
+        "name": "The Edge of Seventeen (2016)",
+        "description": "Everyone knows that growing up is hard, and life is no easier for high school junior Nadine (Hailee Steinfeld), who is already at peak awkwardness when her all-star older brother Darian (Blake Jenner) starts dating her best friend Krista (Haley Lu Richardson). All at once, Nadine feels more alone than ever, until the unexpected friendship of a thoughtful boy (Hayden Szeto) gives her a glimmer of hope that things just might not be so terrible after all.",
+        "rating": "8/10",
+        "src": "seventeen.jpg"
+      },
+      {
+        "id": "12",
+        "name": "The Big Short (2015)",
+        "description": "Three separate but parallel stories of the U.S mortgage housing crisis of 2005 are told. Michael Burry, an eccentric ex-physician turned one-eyed Scion Capital hedge fund manager, has traded traditional office attire for shorts, bare feet and a Supercuts haircut. He believes that the US housing market is built on a bubble that will burst within the next few years. Autonomy within the company allows Burry to do largely as he pleases, so Burry proceeds to bet against the housing market with the banks, who are more than happy to accept his proposal for something that has never happened in American history. The banks believe that Burry is a crackpot and therefore are confident in that they will win the deal. Jared Vennett with Deutschebank gets wind of what Burry is doing and, as an investor believes he too can cash in on Burry's beliefs. ",
+        "rating": "7.8/10",
+        "src": "short.jpg"
+      },
+      {
+        "id": "13",
+        "name": "The Magnificent Seven (2016)",
+        "description": "Director Antoine Fuqua brings his modern vision to a classic story in The Magnificent Seven. With the town of Rose Creek under the deadly control of industrialist Bartholomew Bogue, the desperate townspeople employ protection from seven outlaws, bounty hunters, gamblers and hired guns. As they prepare the town for the violent showdown that they know is coming, these seven mercenaries find themselves fighting for more than money.",
+        "rating": "9/10",
+        "src": "magnificent.jpg"
+      },
+      {
+        "id": "14",
+        "name": "The Revenant (2015)",
+        "description": "While exploring the uncharted wilderness in 1823, legendary frontiersman Hugh Glass sustains injuries from a brutal bear attack. When his hunting team leaves him for dead, Glass must utilize his survival skills to find a way back home while avoiding natives on their own hunt. Grief-stricken and fueled by vengeance, Glass treks through the wintry terrain to track down John Fitzgerald, the former confidant who betrayed and abandoned him.",
+        "rating": "9/10",
+        "src": "revenant.jpg"
+      },
+      {
+        "id": "15",
+        "name": "Pulp Fiction (1994)",
+        "description": "Jules Winnfield and Vincent Vega are two hitmen who are out to retrieve a suitcase stolen from their employer, mob boss Marsellus Wallace. Wallace has also asked Vincent to take his wife Mia out a few days later when Wallace himself will be out of town. Butch Coolidge is an aging boxer who is paid by Wallace to lose his next fight. The lives of these seemingly unrelated people are woven together comprising of a series of funny, bizarre and uncalled-for incidents.",
+        "rating": "9.3/10",
+        "src": "pulp.jpg"
+      },
+      {
+        "id": "16",
+        "name": "The Good, the Bad and the Ugly (1966)",
+        "description": "Blondie (The Good) is a professional gunslinger who is out trying to earn a few dollars. Angel Eyes (The Bad) is a hit man who always commits to a task and sees it through, as long as he is paid to do so. And Tuco (The Ugly) is a wanted outlaw trying to take care of his own hide. Tuco and Blondie share a partnership together making money off Tuco's bounty, but when Blondie unties the partnership, Tuco tries to hunt down Blondie. When Blondie and Tuco come across a horse carriage loaded with dead bodies, they soon learn from the only survivor (Bill Carson) that he and a few other men have buried a stash of gold in a cemetery. Unfortunately Carson dies and Tuco only finds out the name of the cemetery, while Blondie finds out the name on the grave. Now the two must keep each other alive in order to find the gold. Angel Eyes (who had been looking for Bill Carson) discovers that Tuco and Blondie met with Carson and knows they know the location of the gold.",
+        "rating": "8.9/10",
+        "src": "good.jpg"
+      },
+      {
+        "id": "17",
+        "name": "Inception (2010)",
+        "description": "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible - inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.",
+        "rating": "8/10",
+        "src": "inception.jpg"
+      },
+      {
+        "id": "18",
+        "name": "One Flew Over the Cuckoo's Nest (1975)",
+        "description": "McMurphy has a criminal past and has once again gotten himself into trouble and is sentenced by the court. To escape labor duties in prison, McMurphy pleads insanity and is sent to a ward for the mentally unstable. Once here, McMurphy both endures and stands witness to the abuse and degradation of the oppressive Nurse Ratched, who gains superiority and power through the flaws of the other inmates. McMurphy and the other inmates band together to make a rebellious stance against the atrocious Nurse.",
+        "rating": "9.6/10",
+        "src": "cuckoo.jpg"
+      },
+      {
+        "id": "19",
+        "name": "Goodfellas (1990)",
+        "description": "Henry Hill might be a small time gangster, who may have taken part in a robbery with Jimmy Conway and Tommy De Vito, two other gangsters who might have set their sights a bit higher. His two partners could kill off everyone else involved in the robbery, and slowly start to think about climbing up through the hierarchy of the Mob. Henry, however, might be badly affected by his partners' success, but will he consider stooping low enough to bring about the downfall of Jimmy and Tommy? ",
+        "rating": "9.4/10",
+        "src": "goodfellas.jpg"
+      },
+      {
+        "id": "20",
+        "name": "Spirited Away (2001)",
+        "description": "Chihiro and her parents are moving to a small Japanese town in the countryside, much to Chihiro's dismay. On the way to their new home, Chihiro's father makes a wrong turn and drives down a lonely one-lane road which dead-ends in front of a tunnel. Her parents decide to stop the car and explore the area. They go through the tunnel and find an abandoned amusement park on the other side, with its own little town. When her parents see a restaurant with great-smelling food but no staff, they decide to eat and pay later. However, Chihiro refuses to eat and decides to explore the theme park a bit more. She meets a boy named Haku who tells her that Chihiro and her parents are in danger, and they must leave immediately. She runs to the restaurant and finds that her parents have turned into pigs. In addition, the theme park turns out to be a town inhabited by demons, spirits, and evil gods. At the center of the town is a bathhouse where these creatures go to relax.",
+        "rating": "8.8/10",
+        "src": "spirit.jpg"
+      }
+	]
+}
+
+

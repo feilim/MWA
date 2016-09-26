@@ -1,0 +1,39 @@
+  <!--
+  Author: Feilim Lawless
+  Assignment: WE4 Mobile Web Applications, DSA, AngularJS Single Page App 
+  Date: 12/09/2016
+  -->
+
+  <!-- 
+  Partial html file displaying a form with buttons to add to the list or cancel submission
+  -->
+
+      <div class="row header">
+        <div class="col-xs-2"><img id="logo" src="icon.png"></div>
+        <div class="col-xs-5 header-text">To Do List</div>
+        <div class="col-xs-5 "></div>
+    </div>
+  <!-- bond the "formController" to this part of the view via the data-ng-controller directive-->  
+  <div data-ng-controller="formController">
+    <div class="row ">
+      
+        <form novalidate name="ToDoListForm">
+          <div class="form-group">
+              <!-- data-ng-model directive binds user input to app data - from view to model via the controller-->
+              <input type="text" placeholder="Enter Name" id="item-name" data-ng-model="newItem.name" class="form-control" /> 
+           
+          </div>
+          <div class="form-group">
+              <textarea class="form-control" id="item-description" placeholder="Enter Description" data-ng-model="newItem.descr" rows="2"></textarea>
+                       
+          </div>
+          <div class="col-md-12 text-center">
+            <!-- Capture a click event on the button using the data-ng-click directive to envoke the callToAddItem() function, defined in the formController's scope. This function adds the inputted form data to the array holding the to-do list.
+             The # part of the href tag is a signal for AngularJS to inject the partial html file for the app's list (which, in this app, also serves as the app homepage) as per the $routeProvider configuration (see /core-js/appConfig.js file)-->
+            <a class="btn btn-add" href="#/" role="button"  data-ng-click="callToAddItem(newItem)">Add</a>
+            <!-- clicking this button will simply reroute back to the list page without updating the to-do list array -->
+             <a class="btn btn-primary" href="#/" role="button" >Cancel</a>
+           </div>
+        </form>
+      </div>
+    </div>  

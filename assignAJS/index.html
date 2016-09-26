@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<!--
+  Author: Feilim Lawless
+  Assignment: WE4 Mobile Web Applications, DSA, AngularJS Single Page App 
+  Date: 12/09/2016
+  -->
+<head>
+  <title>To Do List AngularJS App</title>
+  <meta charset="utf-8">
+  <!-- allows for control of page's dimensions and scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- include Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- include CSS for app header font -->
+  <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+  <!-- include custom css overwrites Bootstrap CSS -->
+  <link href="css/custom.css" rel="stylesheet">
+  <!-- include Bootstrap Core JS -->
+  <script type="text/javascript" src="core-js/bootstrap.min.js"></script>
+  <!-- include Angular Core JS -->
+  <script type="text/javascript" src="core-js/angular.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+</head>
+<!-- designate what the root element of the application "toDoListApp" is with data-ng-app directive-->
+<body data-ng-app="toDoListApp">
+
+  <div class="container-fluid" data-ng-view>
+   <!-- designate where the partial html files will be injected to via the data-ng-view directive -->
+   
+  </div>
+
+  <!-- include Angular Router JS -->
+  <script type="text/javascript" src="core-js/angular-route.min.js"></script>
+  <!-- include Angular Module JS -->
+  <script src="core-js/appModule.js" ></script>
+  <!-- include Angular Config JS -->
+  <script src="core-js/appConfig.js" ></script>
+  <!-- include Angular Service JS -->
+  <script src="core-js/appService.js" ></script>
+  <!-- include Angular Controller JS for list page -->
+  <script src="todo-list/listController.js" ></script>
+  <!-- include Angular Controller JS for form page -->
+  <script src="form/formController.js" ></script>
+</body>
+</html>

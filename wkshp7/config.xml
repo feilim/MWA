@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<widget xmlns 	 	= "http://www.w3.org/ns/widgets"
+		xmlns:gap	= "http://phonegap.com/ns/1.0"
+		id 		  	= "com.feilimlawless.todolistapp"
+		versionCode = "1"
+		version 	= "1.0.0" >
+
+	<name> To Do List in Angular </name>
+	<description> DSA WE4.1 Assignment, MWA Angular To Do List</description>
+
+	<author href = "https://github.com/feilim/Angular-To-Do-List" email="feilim.lawless@webelevate.ie"> Feilim Lawless</author>
+
+	<icon src="icon.png"/>
+	<!-- ref: http://www.iconarchive.com/show/qetto-2-icons-by-ampeross/todo-icon.html -->
+</widget>

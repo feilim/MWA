@@ -1,0 +1,45 @@
+  <!--
+  Author: Feilim Lawless
+  Assignment: WE4 Mobile Web Applications, DSA, AngularJS Single Page App 
+  Date: 12/09/2016
+  -->
+
+  <!-- 
+  Partial html file displaying the To Do List with buttons to add or delete items
+  -->
+
+    <div class="row header">
+        <div class="col-xs-2"><img id="logo" src="icon.png"></div>
+        <div class="col-xs-5 header-text">To Do List</div>
+        <div class="col-xs-5 text-right">
+            <!-- the # part of the href tag is a signal for AngularJS to inject the partial html file for the app's form as per the $routeProvider configuration (see /core-js/appConfig.js) -->
+          <a class="btn btn-add" href="#/form" role="button">New</a></div>
+    </div>
+    <!-- bond the "listController" to this part of the view via the data-ng-controller directive-->
+    <div data-ng-controller="listController">
+  
+      <div class="row">
+      
+        <table class="table table-striped">
+
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th colspan="2">Description</th>
+            </tr>
+          </thead>
+           <tbody>
+            <!-- instantiate the data-ng-repeat directive within the <TR> element. Everything within that element is written to the view for each iteration of the array listItems  --> 
+            <tr data-ng-repeat="currentItem in listItems">
+              <!-- apply data-binding (using double braces) to display content from the model (ie listItems array):-->
+              <td class="bold">{{currentItem.name}} </td>
+              <td>{{currentItem.description}} </td>
+              <td class="text-right">
+                 <!-- Capture a click event on the button using the data-ng-click directive to envoke the callToDeleteItem() function as defined in the listController's scope. This function deletes the item from the to-do list array specified by the $index paramter. -->
+                <button data-ng-click="callToDeleteItem($index)" class="btn btn-default round"><span class="glyphicon glyphicon-remove-circle custom-icon"></span></button></td>
+            </tr>
+           </tbody>
+        </table>
+      
+      </div>
+    </div>
